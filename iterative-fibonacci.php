@@ -2,16 +2,13 @@
 
 function fibonacci($nb)
 {
-	$nb1 = 0;
-	$nb2 = 1;
+        for($nb1 = 0, $nb2 = 1; $nb > 0; $nb--) {
+                     $tmp = $nb1 + $nb2;
+                     $nb1 = $nb2;
+                     $nb2 = $tmp;
+        }
 
-	while($nb > 0) {
-		$tmp = $nb1 + $nb2;
-		$nb1 = $nb2;
-		$nb2 = $tmp;
-		$nb--;		  
-	}
-	return $nb2;
+        return $nb2;
 }
 
 $enter = readline('Entrez un nombre'.PHP_EOL);
